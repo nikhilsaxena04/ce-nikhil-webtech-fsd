@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE employees SYSTEM "employee.dtd">
+<employees xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="employee.xsd">
+
+  <employee id="s102">
+    <name>Ravi Kumar</name>
+    <department>it</department>
+    <basicSalary>40000</basicSalary>
+    <email>ravi123@gmail.com</email>
+  </employee>
+
+</employees>

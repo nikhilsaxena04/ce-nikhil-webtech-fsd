@@ -1,0 +1,84 @@
+<!-- 400*400 px cart -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+  text-align: center;
+  margin-top: 50px;
+}
+
+#abc {
+  width: 300px;
+  margin: auto;
+  padding: 10px;
+  background: lightblue;
+  border-radius: 8px;
+}
+
+#adi {
+  width: 300px;
+  margin: 20px auto;
+  padding: 15px;
+  background: lightgreen;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#adi button {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 50%;
+  background: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+#adi button:hover {
+  background: #43a047;
+}
+
+    </style>
+</head>
+<body>
+
+    <div id="abc">
+        <img src="imagePhoto.jpg" alt="LOGO" style="height: 40px; width: 40px; border-radius: 40%; margin: 40px;"><h3 style="text-align: center;">Counter App </h3>
+    </div>
+
+    <div id="adi">
+    <button onclick="increment()">+</button>
+    <p id="num"></p>
+    <button onclick="decrement()">-</button>
+</div>
+
+<script>
+    function increment(){
+        let a = document.getElementById("num").innerText;
+        if(a>=10){
+            alert("Value is greater than 10");
+            return;
+        }else{
+        a = Number(a) + 1;
+        document.getElementById("num").innerText = a;
+        }
+    }
+    function decrement(){
+        let a = document.getElementById("num").innerText;
+        if(a<=1){
+            alert("Value is less than 1");
+        }else{
+            a = Number(a) - 1;
+            document.getElementById("num").innerText = a;
+        }
+    }
+</script>
+   
+</body>
+</html>
