@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    const candyPromise = new Promise((resolve, reject) => {
+  let momIsHappy = true;
+  if (momIsHappy) {
+    resolve("Yay! You got candy!");
+  } else {
+    reject("No candy today");
+  }
+});
+
+candyPromise
+  .then(result => console.log(result))   // if promise is fulfilled
+  .catch(error => console.log(error))    // if promise is rejected
+  .finally(() => console.log("Mom gave her answer!"));
+
+  </script>
+  
+</body>
+</html>
