@@ -7,8 +7,19 @@ app.get('/',(req,res)=>{
 })
 
 app.get('/about',(req,res)=>{
-    res.send('<h1>About Page</h1><p>This is the about page of our application.</p>');
-})
+    const students=[
+        {
+            id:1,
+            name:"Nikhil",
+            class:"10"
+        },
+        {
+            id:2,
+            name:"Dipansh",
+            class:"12"
+        }]
+    res.json(students);
+});
 
 app.listen(port,()=>{
     console.log(`server is running at:http://localhost:${port}`)
