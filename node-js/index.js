@@ -1,21 +1,17 @@
-const http = require("http");
 const fs = require("fs");
-const path = require("path");
 
-const myServer = http.createServer((req, res) => {
-  if (req.url === "/image") {
-    const filePath = path.join(__dirname, "luffy.png");
-    fs.readFile(filePath, (err, data) => {
-      res.writeHead(200, { "Content-Type": "image/png" });
-      return res.end(data);
-    });
-    return;
-  }
+async function main() {
+  fs.writeFileSync("sample.txt", "Hi\n");
 
-  res.writeHead(200, { "Content-Type": "text/plain" });
-  res.end("Go to /image");
-});
+  //await fs.promises.copyFile("sample.txt", "sample.copy.txt");
+  //fs.cpSync("sample.txt", "sample.copy.sync.txt");
 
-myServer.listen(3000, "localhost", () => {
-  console.log("Server is listening on http://localhost:3000");
-});
+  fs.appendFileSync("yohoho.txt", `and we are done\n`);
+  const content = fs.readFileSync("yohoho.txt", "utf-8");
+  console.log(content);
+  
+  fs.unlinkSync("yohoho.txt");
+  console.log("Done");
+}
+
+main().catch(console.error);
